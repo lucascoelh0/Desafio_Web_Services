@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">Desafio Web Services</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="login">Log in</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="remember">Remember</string>
+    <string name="create_account">Create account</string>
+    <string name="name">Name</string>
+    <string name="save">Save</string>
+    <string name="welcome_to_the_marvel_hq_s">Welcome to the Marvel HQ\'s</string>
+    <string name="number1">#1</string>
+    <string name="w_e_b_of_spider_man_1_of_5">W.E.B. of Spider-Man #1</string>
+    <string name="descricao_gibi">Peter Parker. Spider-Man. Scientist. Troublemaker? Thanks to none other than Tony Stark, a new scientific research station for the teenage heroes of the Marvel Universe has just been completed – and Spider-Man just got an invitation to join! Working alongside some of your favorite faces from the MU and a whole bunch of awesome new gadgets, and with Iron Man keeping an eye on the them, surely everything\'s going to go great for the heroes, right? …Right? Face front, True Believers, and treat yourself to this first issue in an adventure of the WORLDWIDE ENGINEERING BRIGADE!</string>
+    <string name="published">Published:</string>
+    <string name="price">Price:</string>
+    <string name="february_2021">February, 2021</string>
+    <string name="_5_99">$ 5.99</string>
+    <string name="_36">36</string>
+</resources>

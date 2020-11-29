@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="10dp"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/ivCapaGibiItem"
+        android:layout_width="100dp"
+        android:layout_height="150dp"
+        android:background="@drawable/borda_capa"
+        android:scaleType="fitXY"
+        android:src="@drawable/capa" />
+
+    <TextView
+        android:id="@+id/tvNumeroGibi"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="7dp"
+        android:text="@string/number1"
+        android:textColor="@color/white" />
+
+</LinearLayout>
