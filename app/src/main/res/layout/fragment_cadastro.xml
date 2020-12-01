@@ -11,20 +11,22 @@
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="110dp"
         android:layout_height="110dp"
-        android:layout_marginBottom="420dp"
         android:elevation="1dp"
         android:src="@drawable/ic_outline_person_add_alt_1_24"
         app:civ_circle_background_color="@color/grey"
+        app:layout_constraintBottom_toBottomOf="@+id/constraintLayout2"
+        android:layout_marginBottom="360dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout2"
         android:layout_width="match_parent"
         android:layout_height="420dp"
         android:background="@drawable/round_login_back"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
+        tools:layout_editor_absoluteX="20dp">
 
         <include
             android:id="@+id/includeCadastroBody"

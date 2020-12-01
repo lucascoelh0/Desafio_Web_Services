@@ -9,11 +9,13 @@
     <ImageView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:src="@drawable/splash_spider"/>
+        android:scaleType="fitXY"
+        android:src="@drawable/splash_spider" />
 
     <ImageView
         android:layout_width="180dp"
         android:layout_height="80dp"
+        android:scaleType="fitXY"
         android:src="@drawable/splash_marvel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

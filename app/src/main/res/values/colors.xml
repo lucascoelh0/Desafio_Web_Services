@@ -10,4 +10,5 @@
     <color name="red">#EA2427</color>
     <color name="blueBackgroud">#00162C</color>
     <color name="grey">#EFF2F5</color>
+    <color name="transparent">#00000000</color>
 </resources>

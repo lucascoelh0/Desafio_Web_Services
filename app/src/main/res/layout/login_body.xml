@@ -15,6 +15,7 @@
             android:layout_height="wrap_content"
             android:background="@color/white"
             android:hint="@string/email"
+            android:maxLines="1"
             android:textColor="@color/black"
             android:textColorHint="@color/red" />
 
