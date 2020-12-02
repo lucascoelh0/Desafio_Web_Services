@@ -34,7 +34,7 @@ data class Result(
     val images: List<Image>,
     val isbn: String,
     val issn: String,
-    val issueNumber: Int,
+    val issueNumber: String,
     val modified: String,
     val pageCount: Int,
     val prices: List<Price>,

@@ -11,7 +11,6 @@ import androidx.navigation.Navigation
 import com.example.desafiowebservices.R
 import com.example.desafiowebservices.entities.EventObserver
 import com.example.desafiowebservices.utilities.MainViewModelFactory
-import kotlinx.android.synthetic.main.login_body.*
 import kotlinx.android.synthetic.main.login_body.view.*
 
 
@@ -28,8 +27,9 @@ class LoginFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_login, container, false)
 
-        val factory = MainViewModelFactory(requireActivity().applicationContext)
-        model = ViewModelProvider(this, factory).get(MainViewModel::class.java)
+//        val factory = MainViewModelFactory(requireActivity().applicationContext)
+//        model = ViewModelProvider(this, factory).get(MainViewModel::class.java)
+        model = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
 
         view.btnLogin.setOnClickListener { model.onBtnLoginPressed() }
         view.btnCreateAccount.setOnClickListener { model.onBtnCadastroPressed() }
@@ -45,6 +45,5 @@ class LoginFragment : Fragment() {
         model.navigateScreen.observe(viewLifecycleOwner, EventObserver {
             navController.navigate(it)
         })
-
     }
 }

@@ -46,6 +46,7 @@
         android:id="@+id/detalhesFragment"
         android:name="com.example.desafiowebservices.ui.DetalhesFragment"
         android:label=""
-        tools:layout="@layout/fragment_detalhes" />
+        tools:layout="@layout/fragment_detalhes" >
+    </fragment>
 
 </navigation>

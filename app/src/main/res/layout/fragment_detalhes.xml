@@ -9,13 +9,14 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content">
+        android:layout_height="wrap_content"
+        android:paddingBottom="10dp">
 
         <ImageView
             android:id="@+id/ivCapa"
             android:layout_width="match_parent"
-            android:layout_height="200dp"
-            android:scaleType="centerCrop"
+            android:layout_height="250dp"
+            android:scaleType="center"
             android:src="@drawable/capadetalhes"
             app:layout_constraintTop_toTopOf="parent" />
 
@@ -24,7 +25,7 @@
             android:layout_width="100dp"
             android:layout_height="150dp"
             android:layout_marginStart="10dp"
-            android:layout_marginTop="70dp"
+            android:layout_marginTop="130dp"
             android:background="@drawable/borda_capa"
             android:scaleType="fitXY"
             android:src="@drawable/capa"
@@ -37,6 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
+            android:layout_marginEnd="10dp"
             android:text="@string/w_e_b_of_spider_man_1_of_5"
             android:textAllCaps="true"
             android:textColor="@color/white"
@@ -51,7 +53,7 @@
             android:layout_height="wrap_content"
             android:layout_marginStart="10dp"
             android:layout_marginTop="20dp"
-            android:layout_marginEnd="5dp"
+            android:layout_marginEnd="10dp"
             android:lineSpacingExtra="2dp"
             android:text="@string/descricao_gibi"
             android:textColor="@color/white"
@@ -74,10 +76,10 @@
             android:id="@+id/tvPublishedDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/february_2021"
-            android:layout_marginTop="20dp"
-            android:textColor="@color/white"
             android:layout_marginStart="6dp"
+            android:layout_marginTop="20dp"
+            android:text="@string/february_2021"
+            android:textColor="@color/white"
             app:layout_constraintStart_toEndOf="@+id/tvPublished"
             app:layout_constraintTop_toBottomOf="@+id/tvDescricao" />
 
@@ -97,10 +99,10 @@
             android:id="@+id/tvPriceValue"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_5_99"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/white"
             android:layout_marginStart="6dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/_5_99"
+            android:textColor="@color/white"
             app:layout_constraintStart_toEndOf="@+id/tvPrice"
             app:layout_constraintTop_toBottomOf="@+id/tvPublishedDate" />
 
@@ -120,10 +122,10 @@
             android:id="@+id/tvPagesNumber"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/_36"
-            android:layout_marginTop="10dp"
-            android:textColor="@color/white"
             android:layout_marginStart="6dp"
+            android:layout_marginTop="10dp"
+            android:text="@string/_36"
+            android:textColor="@color/white"
             app:layout_constraintStart_toEndOf="@+id/tvPages"
             app:layout_constraintTop_toBottomOf="@+id/tvPriceValue" />
 

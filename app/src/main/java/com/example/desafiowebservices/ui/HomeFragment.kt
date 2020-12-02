@@ -5,21 +5,21 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafiowebservices.R
-import com.example.desafiowebservices.entities.Result
+import com.example.desafiowebservices.entities.EventObserver
 import com.example.desafiowebservices.ui.adapters.HomeAdapter
-import com.example.desafiowebservices.utilities.MainViewModelFactory
 
-class HomeFragment : Fragment() {
+class HomeFragment : Fragment(), HomeAdapter.OnClickGibiListener {
 
-    private lateinit var navController: NavController
     private lateinit var model: MainViewModel
-    lateinit var homeAdapter: HomeAdapter
+    private lateinit var homeAdapter: HomeAdapter
+    private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -29,14 +29,11 @@ class HomeFragment : Fragment() {
 
         val view = inflater.inflate(R.layout.fragment_home, container, false)
 
-//        val factory = MainViewModelFactory(requireActivity().applicationContext)
-//        model = ViewModelProvider(this, factory).get(MainViewModel::class.java)
-
         model = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
 
         model.listComics.observe(viewLifecycleOwner, {
 
-            homeAdapter = model.listComics.value?.let { context?.let { it1 -> HomeAdapter(it1, it) } }!!
+            homeAdapter = model.listComics.value?.let { HomeAdapter(it, this) }!!
 
             val recyclerView = view?.findViewById<RecyclerView>(R.id.rvGibis)
 
@@ -46,5 +43,20 @@ class HomeFragment : Fragment() {
         })
 
         return view
+    }
+
+    override fun onClickGibi(position: Int) {
+        model.currentPosition.value = position
+        model.onRvGibiPressed()
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        navController = Navigation.findNavController(view)
+
+        model.navigateScreen.observe(viewLifecycleOwner, EventObserver {
+            navController.navigate(it)
+        })
     }
 }

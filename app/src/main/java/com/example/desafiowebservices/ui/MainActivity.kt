@@ -1,6 +1,7 @@
 package com.example.desafiowebservices.ui
 
 import android.os.Bundle
+import android.view.LayoutInflater
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
@@ -41,10 +42,20 @@ class MainActivity : AppCompatActivity() {
 
         navController.addOnDestinationChangedListener { _, destination, _ ->
             when (destination.id) {
-                R.id.cadastroFragment, R.id.homeFragment -> {
+                R.id.cadastroFragment -> {
+                    supportActionBar?.setDisplayShowCustomEnabled(false)
+                    viewModel.mudarCorDaToolbar(this, R.color.red, supportActionBar)
+                }
+                R.id.homeFragment -> {
+                    supportActionBar?.setDisplayShowCustomEnabled(true)
+
+                    val view = LayoutInflater.from(this).inflate(R.layout.custom_toolbar_imageview, null)
+                    supportActionBar?.customView = view.findViewById(R.id.customToolbar)
+
                     viewModel.mudarCorDaToolbar(this, R.color.red, supportActionBar)
                 }
                 R.id.detalhesFragment, R.id.loginFragment -> {
+                    supportActionBar?.setDisplayShowCustomEnabled(false)
                     viewModel.mudarCorDaToolbar(this, R.color.transparent, supportActionBar)
                 }
             }

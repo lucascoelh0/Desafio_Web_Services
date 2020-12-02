@@ -11,15 +11,38 @@ import com.example.desafiowebservices.R
 import com.example.desafiowebservices.entities.Result
 import com.squareup.picasso.Picasso
 
-class HomeAdapter(val context: Context, val listComics: List<Result>) :
+class HomeAdapter(
+    private val listComics: List<Result>,
+    val listener: OnClickGibiListener
+) :
     RecyclerView.Adapter<HomeAdapter.MainViewHolder>() {
 
-    inner class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        var ivCapaGibiItem: ImageView = itemView.findViewById(R.id.ivCapaGibiItem)
-        var tvNumeroGibi: TextView = itemView.findViewById(R.id.tvNumeroGibi)
+    interface OnClickGibiListener {
+        fun onClickGibi(position: Int)
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MainViewHolder {
+    inner class MainViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView),
+        View.OnClickListener {
+
+        var ivCapaGibiItem: ImageView = itemView.findViewById(R.id.ivCapaGibiItem)
+        var tvNumeroGibi: TextView = itemView.findViewById(R.id.tvNumeroGibi)
+
+        init {
+            itemView.setOnClickListener(this)
+        }
+
+        override fun onClick(v: View?) {
+            val position = adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                listener.onClickGibi(position)
+            }
+        }
+    }
+
+    override fun onCreateViewHolder(
+        parent: ViewGroup,
+        viewType: Int
+    ): MainViewHolder {
         val itemView =
             LayoutInflater.from(parent.context).inflate(R.layout.item_gibi, parent, false)
         return MainViewHolder(itemView)

@@ -25,8 +25,10 @@ class CadastroFragment : Fragment() {
     ): View? {
         val view = inflater.inflate(R.layout.fragment_cadastro, container, false)
 
-        val factory = MainViewModelFactory(requireActivity().applicationContext)
-        model = ViewModelProvider(this, factory).get(MainViewModel::class.java)
+//        val factory = MainViewModelFactory(requireActivity().applicationContext)
+//        model = ViewModelProvider(this, factory).get(MainViewModel::class.java)
+
+        model = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
 
         view.btnSave.setOnClickListener { model.onBtnSavePressed() }
 
