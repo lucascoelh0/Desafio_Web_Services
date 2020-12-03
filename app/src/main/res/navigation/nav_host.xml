@@ -47,6 +47,13 @@
         android:name="com.example.desafiowebservices.ui.DetalhesFragment"
         android:label=""
         tools:layout="@layout/fragment_detalhes" >
+        <action
+            android:id="@+id/action_detalhesFragment_to_capaExpandidaFragment"
+            app:destination="@id/capaExpandidaFragment" />
     </fragment>
+    <fragment
+        android:id="@+id/capaExpandidaFragment"
+        android:name="com.example.desafiowebservices.ui.CapaExpandidaFragment"
+        tools:layout="@layout/fragment_capa_expandida" />
 
 </navigation>

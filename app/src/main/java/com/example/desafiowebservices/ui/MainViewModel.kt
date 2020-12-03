@@ -39,6 +39,10 @@ class MainViewModel(repository: Repository) : ViewModel() {
         _navigateScreen.value = Event(R.id.detalhesFragment)
     }
 
+    fun onIvCapaGibiDetalhePressed() {
+        _navigateScreen.value = Event(R.id.capaExpandidaFragment)
+    }
+
     fun popListComics() {
         viewModelScope.launch {
             listComics.value = repository.getComics(
@@ -66,13 +70,17 @@ class MainViewModel(repository: Repository) : ViewModel() {
         )
     }
 
-    fun setarImagem(path: String, extension: String, ivCapa: ImageView, ivCapaGibiDetalhe: ImageView) {
+    fun setarImagem(
+        path: String,
+        extension: String,
+        ivCapa: ImageView,
+        ivCapaGibiDetalhe: ImageView
+    ) {
         val caminhoImagemThumbnail = "$path/portrait_xlarge.$extension"
         val caminhoImagemCapa = "$path/detail.$extension"
 
         Picasso.get().load(caminhoImagemThumbnail).fit().into(ivCapaGibiDetalhe)
         Picasso.get().load(caminhoImagemCapa).centerCrop().fit().into(ivCapa)
-//        Picasso.get().load(caminhoImagemCapa).fit().into(ivCapa)
     }
 
     fun setarData(published: String, textView: TextView) {
@@ -81,5 +89,14 @@ class MainViewModel(repository: Repository) : ViewModel() {
         val dataFormatada: String = data[2] + "/" + data[1] + "/" + data[0]
 
         textView.text = dataFormatada
+    }
+
+    fun setarTexto(text: String, textView: TextView) {
+        textView.text = text
+    }
+
+    fun setarImagemExpandida(path: String, extension: String, ivCapaExpandida: ImageView) {
+        val caminhoImagemCapa = "$path/detail.$extension"
+        Picasso.get().load(caminhoImagemCapa).fit().into(ivCapaExpandida)
     }
 }

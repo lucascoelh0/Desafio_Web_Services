@@ -4,14 +4,18 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.TextView
+import android.widget.ImageView
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
+import androidx.navigation.NavController
+import androidx.navigation.Navigation
 import com.example.desafiowebservices.R
+import com.example.desafiowebservices.entities.EventObserver
 
 class DetalhesFragment : Fragment() {
 
     private lateinit var model: MainViewModel
+    private lateinit var navController: NavController
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -32,8 +36,6 @@ class DetalhesFragment : Fragment() {
 
             if (clickedComic != null) {
 
-                view.findViewById<TextView>(R.id.tvDescricao).text = clickedComic.description
-
                 model.setarImagem(
                     clickedComic.thumbnail.path,
                     clickedComic.thumbnail.extension,
@@ -41,18 +43,34 @@ class DetalhesFragment : Fragment() {
                     view.findViewById(R.id.ivCapaGibiDetalhe)
                 )
 
-                view.findViewById<TextView>(R.id.tvTitulo).text = clickedComic.title
-
+                model.setarTexto(clickedComic.description, view.findViewById(R.id.tvDescricao))
+                model.setarTexto(clickedComic.title, view.findViewById(R.id.tvTitulo))
+                model.setarTexto(
+                    "$ " + clickedComic.prices[0].price,
+                    view.findViewById(R.id.tvPriceValue)
+                )
+                model.setarTexto(
+                    clickedComic.pageCount.toString(),
+                    view.findViewById(R.id.tvPagesNumber)
+                )
                 model.setarData(clickedComic.dates[0].date, view.findViewById(R.id.tvPublishedDate))
-
-                val preco = "$ " + clickedComic.prices[0].price
-                view.findViewById<TextView>(R.id.tvPriceValue).text = preco
-
-                view.findViewById<TextView>(R.id.tvPagesNumber).text =
-                    clickedComic.pageCount.toString()
             }
         })
 
+        view.findViewById<ImageView>(R.id.ivCapaGibiDetalhe).setOnClickListener {
+            model.onIvCapaGibiDetalhePressed()
+        }
+
         return view
+    }
+
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        navController = Navigation.findNavController(view)
+
+        model.navigateScreen.observe(viewLifecycleOwner, EventObserver {
+            navController.navigate(it)
+        })
     }
 }
