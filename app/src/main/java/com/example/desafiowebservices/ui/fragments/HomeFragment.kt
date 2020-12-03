@@ -1,4 +1,4 @@
-package com.example.desafiowebservices.ui
+package com.example.desafiowebservices.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -8,12 +8,12 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.desafiowebservices.R
 import com.example.desafiowebservices.entities.EventObserver
 import com.example.desafiowebservices.ui.adapters.HomeAdapter
+import com.example.desafiowebservices.ui.viewmodels.MainViewModel
 
 class HomeFragment : Fragment(), HomeAdapter.OnClickGibiListener {
 

@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     android:background="@color/blueBackgroud"
     android:padding="20dp"
-    tools:context=".ui.CadastroFragment">
+    tools:context=".ui.fragments.CadastroFragment">
 
     <de.hdodenhof.circleimageview.CircleImageView
         android:layout_width="110dp"

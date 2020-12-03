@@ -1,4 +1,4 @@
-package com.example.desafiowebservices.ui
+package com.example.desafiowebservices.ui.activities
 
 import android.content.Intent
 import android.os.Bundle

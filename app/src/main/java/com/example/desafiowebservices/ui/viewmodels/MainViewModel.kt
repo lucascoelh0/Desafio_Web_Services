@@ -1,4 +1,4 @@
-package com.example.desafiowebservices.ui
+package com.example.desafiowebservices.ui.viewmodels
 
 import android.content.Context
 import android.graphics.drawable.ColorDrawable

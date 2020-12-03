@@ -1,4 +1,4 @@
-package com.example.desafiowebservices.ui
+package com.example.desafiowebservices.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,11 +10,10 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.desafiowebservices.R
 import com.example.desafiowebservices.entities.EventObserver
-import com.example.desafiowebservices.utilities.MainViewModelFactory
-import kotlinx.android.synthetic.main.login_body.view.*
+import com.example.desafiowebservices.ui.viewmodels.MainViewModel
+import kotlinx.android.synthetic.main.cadastro_body.view.*
 
-
-class LoginFragment : Fragment() {
+class CadastroFragment : Fragment() {
 
     private lateinit var navController: NavController
     private lateinit var model: MainViewModel
@@ -24,15 +23,11 @@ class LoginFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        val view = inflater.inflate(R.layout.fragment_cadastro, container, false)
 
-        val view = inflater.inflate(R.layout.fragment_login, container, false)
-
-//        val factory = MainViewModelFactory(requireActivity().applicationContext)
-//        model = ViewModelProvider(this, factory).get(MainViewModel::class.java)
         model = ViewModelProvider(requireActivity()).get(MainViewModel::class.java)
 
-        view.btnLogin.setOnClickListener { model.onBtnLoginPressed() }
-        view.btnCreateAccount.setOnClickListener { model.onBtnCadastroPressed() }
+        view.btnSave.setOnClickListener { model.onBtnSavePressed() }
 
         return view
     }

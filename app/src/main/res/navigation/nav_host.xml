@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/loginFragment"
-        android:name="com.example.desafiowebservices.ui.LoginFragment"
+        android:name="com.example.desafiowebservices.ui.fragments.LoginFragment"
         android:label=""
         tools:layout="@layout/fragment_login">
         <action
@@ -22,7 +22,7 @@
 
     <fragment
         android:id="@+id/cadastroFragment"
-        android:name="com.example.desafiowebservices.ui.CadastroFragment"
+        android:name="com.example.desafiowebservices.ui.fragments.CadastroFragment"
         android:label="Register"
         tools:layout="@layout/fragment_cadastro">
         <action
@@ -34,7 +34,7 @@
 
     <fragment
         android:id="@+id/homeFragment"
-        android:name="com.example.desafiowebservices.ui.HomeFragment"
+        android:name="com.example.desafiowebservices.ui.fragments.HomeFragment"
         android:label=""
         tools:layout="@layout/fragment_home">
         <action
@@ -44,7 +44,7 @@
 
     <fragment
         android:id="@+id/detalhesFragment"
-        android:name="com.example.desafiowebservices.ui.DetalhesFragment"
+        android:name="com.example.desafiowebservices.ui.fragments.DetalhesFragment"
         android:label=""
         tools:layout="@layout/fragment_detalhes" >
         <action
@@ -53,7 +53,7 @@
     </fragment>
     <fragment
         android:id="@+id/capaExpandidaFragment"
-        android:name="com.example.desafiowebservices.ui.CapaExpandidaFragment"
+        android:name="com.example.desafiowebservices.ui.fragments.CapaExpandidaFragment"
         tools:layout="@layout/fragment_capa_expandida" />
 
 </navigation>

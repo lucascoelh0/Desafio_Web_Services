@@ -1,4 +1,4 @@
-package com.example.desafiowebservices.ui
+package com.example.desafiowebservices.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -11,6 +11,7 @@ import androidx.navigation.NavController
 import androidx.navigation.Navigation
 import com.example.desafiowebservices.R
 import com.example.desafiowebservices.entities.EventObserver
+import com.example.desafiowebservices.ui.viewmodels.MainViewModel
 
 class DetalhesFragment : Fragment() {
 

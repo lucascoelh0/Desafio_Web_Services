@@ -1,11 +1,10 @@
-package com.example.desafiowebservices.ui
+package com.example.desafiowebservices.ui.activities
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
-import androidx.core.content.res.ResourcesCompat
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.NavController
@@ -15,7 +14,7 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.desafiowebservices.R
 import com.example.desafiowebservices.services.repository
-import kotlinx.android.synthetic.main.toolbar.*
+import com.example.desafiowebservices.ui.viewmodels.MainViewModel
 
 class MainActivity : AppCompatActivity() {
 
@@ -50,7 +49,8 @@ class MainActivity : AppCompatActivity() {
                 R.id.homeFragment -> {
                     supportActionBar?.setDisplayShowCustomEnabled(true)
 
-                    val view = LayoutInflater.from(this).inflate(R.layout.custom_toolbar_imageview, null)
+                    val view =
+                        LayoutInflater.from(this).inflate(R.layout.custom_toolbar_imageview, null)
                     supportActionBar?.customView = view.findViewById(R.id.customToolbar)
 
                     viewModel.mudarCorDaToolbar(this, R.color.red, supportActionBar)
